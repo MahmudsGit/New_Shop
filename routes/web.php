@@ -4,14 +4,24 @@ Route::get('/',[
    'uses'   =>  'NewShopController@index',
    'as'     =>  '/'
 ]);
-Route::get('/category-product',[
+Route::get('/category/product/{id}',[
    'uses'   =>  'NewShopController@category',
-   'as'     =>  '/category-product'
+   'as'     =>  'category-product'
+]);
+Route::get('/brand/product/{id}',[
+   'uses'   =>  'NewShopController@brand',
+   'as'     =>  'brand-product'
+]);
+Route::get('/product/details',[
+   'uses'   =>  'NewShopController@ProductDetails',
+   'as'     =>  'product-details'
 ]);
 Route::get('/mail-us',[
    'uses'   =>  'NewShopController@mail',
    'as'     =>  '/mail'
 ]);
+
+
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
