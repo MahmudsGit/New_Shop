@@ -8,7 +8,23 @@ use Image;
 class AdController extends Controller
 {
     public function AdImage(){
-        return view('admin.ads.ad_image');
+        $adImages = ad::all();
+        return view('admin.ads.ad_image',[
+            'adImages'=>$adImages
+        ]);
+    }
+    protected function adImageValidation($request){
+        $this->validate($request,[
+           'main_ad' =>'required|regex:/^[\pL\s\-]+$/u|max:20|min:2',
+           'off_percent' =>'required|numeric',
+           'main_image' =>'required',
+           'seceondary_ad' =>'required|regex:/^[\pL\s\-]+$/u|max:20|min:2',
+           'secondary_image' =>'required',
+           'third_ad' =>'required|regex:/^[\pL\s\-]+$/u|max:20|min:2',
+           'third_image' =>'required',
+           'fourth_ad' =>'required|regex:/^[\pL\s\-]+$/u|max:20|min:2',
+           'fourth_image' =>'required',
+        ]);
     }
     protected function mainImageUpload($request){
         $mainImage = $request->file('main_image');
@@ -16,7 +32,7 @@ class AdController extends Controller
         $mainImageName = 'main_Image'.'.'.$mainImageNameExtention;
         $directory = 'ad-image/';
         $mainImageUrl = $directory.$mainImageName;
-        Image::make($mainImage)->resize(800,500)->save($mainImageUrl);
+        Image::make($mainImage)->resize(800,800)->save($mainImageUrl);
         return $mainImageUrl;
     }
     protected function secondaryImageUpload($request){
@@ -48,11 +64,11 @@ class AdController extends Controller
     }
 
     protected function saveData($request,$mainImageUrl,$secondaryImageUrl,$thirdImageUrl,$fourthImageUrl){
-        $ad = new ad();
+        $ad = ad::find($request->id);
         $ad->main_ad = $request->main_ad;
         $ad->off_percent = $request->off_percent;
-        $ad->main_image = $request->main_image;
-        $ad->seceondary_ad = $mainImageUrl;
+        $ad->main_image = $mainImageUrl;
+        $ad->seceondary_ad = $request->seceondary_ad;
         $ad->secondary_image = $secondaryImageUrl;
         $ad->third_ad = $request->third_ad;
         $ad->third_image = $thirdImageUrl;
@@ -62,6 +78,7 @@ class AdController extends Controller
     }
 
     public function SaveAdImage(Request $request){
+        $this->adImageValidation($request);
         $mainImageUrl = $this->mainImageUpload($request);
         $secondaryImageUrl = $this->secondaryImageUpload($request);
         $thirdImageUrl = $this->thirdImageUpload($request);
@@ -69,6 +86,6 @@ class AdController extends Controller
 
         $this->saveData($request,$mainImageUrl,$secondaryImageUrl,$thirdImageUrl,$fourthImageUrl);
 
-        return 'sucess';
+        return redirect('/image/ad')->with('messege','Image update success');
     }
 }

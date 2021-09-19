@@ -82,7 +82,7 @@
                                                 <div class="grid-arr">
                                                     <div  class="grid-arrival">
                                                         <figure>
-                                                            <a href="{{ route('product-details') }}" class="new-gri" >
+                                                            <a href="{{ route('product-details', ['id' => $brandProduct->id]) }}" class="new-gri" >
                                                                 <div class="grid-img">
                                                                     <img  src="{{ asset( $brandProduct->product_image ) }}" class="img-responsive" alt="">
                                                                 </div>
@@ -115,7 +115,7 @@
                                                 <div class="grid-arr">
                                                     <div  class="grid-arrival">
                                                         <figure>
-                                                            <a href="{{ route('product-details') }}" class="new-gri" >
+                                                            <a href="{{ route('product-details', ['id' => $brandProduct->id]) }}" class="new-gri" >
                                                                 <div class="grid-img">
                                                                     <img  src="{{ asset( $brandProduct->product_image ) }}" class="img-responsive" alt="">
                                                                 </div>

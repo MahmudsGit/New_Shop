@@ -12,7 +12,7 @@ Route::get('/brand/product/{id}',[
    'uses'   =>  'NewShopController@brand',
    'as'     =>  'brand-product'
 ]);
-Route::get('/product/details',[
+Route::get('/product/details/{id}',[
    'uses'   =>  'NewShopController@ProductDetails',
    'as'     =>  'product-details'
 ]);

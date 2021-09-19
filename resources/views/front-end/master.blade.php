@@ -250,7 +250,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="copy-section">
     <div class="container">
         <div class="copy-left">
-            <p>&copy; 2016 New Shop . All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
+            <p>&copy; 2021 New Shop . All rights reserved | Developed by <a href="#">Golam Mahmud</a></p>
         </div>
         <div class="copy-right">
             <img src="{{ asset('/') }}/front-end/images/card.png" alt=""/>

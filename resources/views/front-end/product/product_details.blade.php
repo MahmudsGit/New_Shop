@@ -7,32 +7,33 @@
                 <div class="single-grids">
                     <div class="col-md-9 single-grid">
                         <div clas="single-top">
+                            @foreach($productDetails as $productDetail)
                             <div class="single-left">
                                 <div class="flexslider">
                                     <ul class="slides">
-                                        <li data-thumb="{{ asset('/') }}/front-end/images/si.jpg">
-                                            <div class="thumb-image"> <img src="{{ asset('/') }}/front-end/images/si.jpg" data-imagezoom="true" class="img-responsive"> </div>
+                                        <li data-thumb="{{ asset($productDetail->product_image) }}">
+                                            <div class="thumb-image"> <img src="{{ asset($productDetail->product_image) }}" data-imagezoom="true" class="img-responsive"> </div>
                                         </li>
-                                        <li data-thumb="{{ asset('/') }}/front-end/images/si1.jpg">
-                                            <div class="thumb-image"> <img src="{{ asset('/') }}/front-end/images/si1.jpg" data-imagezoom="true" class="img-responsive"> </div>
+                                        <li data-thumb="{{ asset($productDetail->product_image) }}">
+                                            <div class="thumb-image"> <img src="{{ asset($productDetail->product_image) }}" data-imagezoom="true" class="img-responsive"> </div>
                                         </li>
-                                        <li data-thumb="{{ asset('/') }}/front-end/images/si2.jpg">
-                                            <div class="thumb-image"> <img src="{{ asset('/') }}/front-end/images/si2.jpg" data-imagezoom="true" class="img-responsive"> </div>
+                                        <li data-thumb="{{ asset($productDetail->product_image) }}">
+                                            <div class="thumb-image"> <img src="{{ asset($productDetail->product_image) }}" data-imagezoom="true" class="img-responsive"> </div>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="single-right simpleCart_shelfItem">
-                                <h4>Sed do eiusmod tempor</h4>
+                                <h4>{{ $productDetail->product_name }}</h4>
                                 <div class="block">
                                     <div class="starbox small ghosting"> </div>
                                 </div>
-                                <p class="price item_price">$ 14.00</p>
+                                <p class="price item_price">$ {{ $productDetail->product_price }}</p>
                                 <div class="description">
-                                    <p><span>Quick Overview : </span> In cursus faucibus tortor eu vestibulum. Ut eget turpis ac justo porta varius. Donec vel felis ante, ac vehicula ipsum. Quisque sed diam metus. Quisque eget leo sit amet erat varius rutrum vitae dapibus lectus. Vivamus et sapien ante. Suspendisse potenti. Fusce in tellus est, ac consequat.</p>
+                                    <p><span>Quick Overview : </span>{{ $productDetail->short_description }}</p>
                                 </div>
                                 <div class="color-quality">
-                                    <h6>Quality :</h6>
+                                    <h6>Quantity :</h6>
                                     <div class="quantity">
                                         <div class="quantity-select">
                                             <div class="entry value-minus1">&nbsp;</div>
@@ -65,6 +66,7 @@
                                     <a href="#"><i class="icon3"></i></a>
                                 </div>
                             </div>
+                            @endforeach
                             <div class="clearfix"> </div>
                         </div>
                     </div>
@@ -253,23 +255,9 @@
                                     <div id="myTabContent" class="tab-content">
                                         <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
                                             <div class="descr">
-                                                <h4>Suspendisse laoreet, augue vel mattis </h4>
-                                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
-                                                <p class="quote">Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
-                                                <div class="video">
-                                                    <iframe src="https://player.vimeo.com/video/22158502" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-                                                </div>
-                                                <ul>
-                                                    <li> Twin button front fastening</li>
-                                                    <li> Length:65cm</li>
-                                                    <li> Regular fit</li>
-                                                    <li> Notched lapels</li>
-                                                    <li> Internal pockets</li>
-                                                    <li> Centre-back vent </li>
-                                                    <li> Material : Outer: 40% Linen &amp; 40% Polyamide; Body Lining: 100% Cotton; Lining: 100% Acetate</li>
-                                                </ul>
-                                                <p class="quote">Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
-
+                                                @foreach($productDetails as $productDetail)
+                                                    {!! $productDetail->long_description !!}
+                                                @endforeach
                                             </div>
                                         </div>
                                         <div role="tabpanel" class="tab-pane fade" id="reviews" aria-labelledby="reviews-tab">

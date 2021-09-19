@@ -48,44 +48,46 @@
         <!--banner-bottom-->
         <div class="ban-bottom-w3l">
             <div class="container">
+                @foreach($ads as $ad)
                 <div class="col-md-6 ban-bottom">
                     <div class="ban-top">
-                        <img src="{{ asset('/') }}/front-end/images/p1.jpg" class="img-responsive" alt=""/>
+                        <img src="{{ asset($ad->main_image) }}" class="img-responsive" alt=""/>
                         <div class="ban-text">
-                            <h4>Men’s Clothing</h4>
+                            <h4>{{ $ad->main_ad }}</h4>
                         </div>
                         <div class="ban-text2 hvr-sweep-to-top">
-                            <h4>50% <span>Off/-</span></h4>
+                            <h4>{{ $ad->off_percent }}% <span>Off/-</span></h4>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 ban-bottom3">
                     <div class="ban-top">
-                        <img src="{{ asset('/') }}/front-end/images/p2.jpg" class="img-responsive" alt=""/>
+                        <img src="{{ asset($ad->secondary_image) }}" class="img-responsive" alt=""/>
                         <div class="ban-text1">
-                            <h4>Women's Clothing</h4>
+                            <h4>{{ $ad->seceondary_ad }}</h4>
                         </div>
                     </div>
                     <div class="ban-img">
                         <div class=" ban-bottom1">
                             <div class="ban-top">
-                                <img src="{{ asset('/') }}/front-end/images/p3.jpg" class="img-responsive" alt=""/>
+                                <img src="{{ asset($ad->third_image) }}" class="img-responsive" alt=""/>
                                 <div class="ban-text1">
-                                    <h4>T - Shirt</h4>
+                                    <h4>{{ $ad->third_ad }}</h4>
                                 </div>
                             </div>
                         </div>
                         <div class="ban-bottom2">
                             <div class="ban-top">
-                                <img src="{{ asset('/') }}/front-end/images/p4.jpg" class="img-responsive" alt=""/>
+                                <img src="{{ asset($ad->fourth_image) }}" class="img-responsive" alt=""/>
                                 <div class="ban-text1">
-                                    <h4>Hand Bag</h4>
+                                    <h4>{{ $ad->fourth_ad }}</h4>
                                 </div>
                             </div>
                         </div>
                         <div class="clearfix"></div>
                     </div>
                 </div>
+                @endforeach
                 <div class="clearfix"></div>
             </div>
         </div>
@@ -101,7 +103,7 @@
                             <div class="grid-arr">
                                 <div  class="grid-arrival">
                                     <figure>
-                                        <a href="{{ route('product-details') }}" class="new-gri" >
+                                        <a href="{{ route('product-details', ['id' => $newProduct->id]) }}" class="new-gri" >
                                             <div class="grid-img">
                                                 <img  src="{{ asset($newProduct->product_image) }}" class="img-responsive" alt="">
                                             </div>
@@ -122,7 +124,7 @@
                                 </div>
                                 <div class="women">
                                     <h6><a href="#">{{ $newProduct->product_name }}</a></h6>
-                                    <p ><em class="item_price">{{ $newProduct->product_price }}</em>Tk.</p>
+                                    <p ><em class="item_price">{{ $newProduct->product_price }}</em> Tk.</p>
                                     <a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
                                 </div>
                             </div>

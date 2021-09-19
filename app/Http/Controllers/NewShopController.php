@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\ad;
 use App\brand;
 use App\category;
 use App\product;
@@ -16,8 +17,11 @@ class NewShopController extends Controller
             ->take(8)
             ->get();
 
+        $ads = ad::all();
+
         return view('front-end.home.index',[
-            'newProducts'=> $newProducts
+            'newProducts'=> $newProducts,
+            'ads'=> $ads
         ]);
     }
     public function category($id){
@@ -40,8 +44,14 @@ class NewShopController extends Controller
     public function mail(){
         return view('front-end.mail.mail');
     }
-    public function ProductDetails(){
+    public function ProductDetails($id){
 
-        return view('front-end.product.product_details');
+        $productDetails = product::where('id', $id)
+            ->where('product_status', 1)
+            ->get();
+
+        return view('front-end.product.product_details',[
+            'productDetails'=>$productDetails
+        ]);
     }
 }
