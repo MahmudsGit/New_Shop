@@ -126,3 +126,11 @@ Route::get('/product/delete/{id}',[
     'uses'   =>  'ProductController@DeleteProduct',
     'as'     =>  'delete-product'
 ]);
+Route::get('/image/ad',[
+    'uses'   =>  'AdController@AdImage',
+    'as'     =>  'ad-image'
+]);
+Route::post('/image/save',[
+    'uses'   =>  'AdController@SaveAdImage',
+    'as'     =>  'save-ad-image'
+]);

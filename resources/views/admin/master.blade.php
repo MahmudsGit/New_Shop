@@ -109,6 +109,15 @@
                 </div>
             </div>
         </li>
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="{{ route('ad-image') }}"
+               aria-expanded="true" aria-controls="collapseFour">
+                <i class="fas fa-fw fa-image"></i>
+                <span>Custom Ads</span>
+            </a>
+        </li>
+
 
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">

@@ -71,7 +71,7 @@
                         </div>
                         <div class="form-group">
                             <label for="product_image">Product Image</label>
-                            <img src="{{ asset($products->product_image) }}" height="50px" width="50px" alt="">
+                            <img src="{{ asset($products->product_image) }}" height="80px" width="80px" alt="">
                             <input type="file" name="product_image" class="form-control" accept="image/*">
                             <span class="text-danger">{{ $errors->has('product_image') ? $errors->first('product_image') : ' ' }}</span>
                         </div>
