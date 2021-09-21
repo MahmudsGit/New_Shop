@@ -103,6 +103,26 @@
                     </div>
                 </div>
             </div>
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-primary shadow h-100 py-3">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xl font-weight-bold text-primary text-uppercase mb-4">
+                                    Slider
+                                </div>
+                                <div class="text-xs mb-2 font-weight-bold text-gray-800">
+                                    <a href="{{ route('slider-image') }}">Change</a>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-map-marked fa-2x text-gray-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </div>
     <!-- /.container-fluid -->
 @endsection

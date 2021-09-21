@@ -99,7 +99,7 @@
                                                         <h6><a href="single.html">{{ $categoryProduct->product_name }}</a></h6>
                                                         <span class="size">Available</span>
                                                         <p ><em class="item_price">{{ $categoryProduct->product_price }}</em></p>
-                                                        <a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
+                                                        <a href="{{ route('ad-to-cart',['id'=>$categoryProduct->id]) }}" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -136,7 +136,7 @@
                                                     <span class="size">Available</span>
                                                     <p>{{ $categoryProduct->short_description }}</p>
                                                     <p ><del><em class="item_price">{{ $categoryProduct->product_price }}</em></p>
-                                                    <a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
+                                                    <a href="{{ route('ad-to-cart',['id'=>$categoryProduct->id]) }}" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
                                                 </div>
                                             </div>
                                             <div class="clearfix"></div>

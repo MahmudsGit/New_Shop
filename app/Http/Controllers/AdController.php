@@ -23,7 +23,7 @@ class AdController extends Controller
            'third_ad' =>'required|regex:/^[\pL\s\-]+$/u|max:20|min:2',
            'third_image' =>'required',
            'fourth_ad' =>'required|regex:/^[\pL\s\-]+$/u|max:20|min:2',
-           'fourth_image' =>'required',
+           'fourth_image' =>'required'
         ]);
     }
     protected function mainImageUpload($request){

@@ -111,6 +111,14 @@
         </li>
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
+            <a class="nav-link collapsed" href="{{ route('slider-image') }}"
+               aria-expanded="true" aria-controls="collapseFour">
+                <i class="fas fa-fw fa-image"></i>
+                <span>Custom Slider</span>
+            </a>
+        </li>
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
             <a class="nav-link collapsed" href="{{ route('ad-image') }}"
                aria-expanded="true" aria-controls="collapseFour">
                 <i class="fas fa-fw fa-image"></i>

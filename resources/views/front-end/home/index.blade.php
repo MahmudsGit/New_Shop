@@ -9,18 +9,20 @@
             <div id="example1" class="core-slider core-slider__carousel example_1">
                 <div class="core-slider_viewport">
                     <div class="core-slider_list">
+                        @foreach($sliderImages as $sliderImage)
                         <div class="core-slider_item">
-                            <img src="{{ asset('/') }}/front-end/images/b1.jpg" class="img-responsive" alt="">
+                            <img src="{{ asset($sliderImage->first_image) }}" class="img-responsive" alt="">
                         </div>
                         <div class="core-slider_item">
-                            <img src="{{ asset('/') }}/front-end/images/b2.jpg" class="img-responsive" alt="">
+                            <img src="{{ asset($sliderImage->second_image) }}" class="img-responsive" alt="">
                         </div>
                         <div class="core-slider_item">
-                            <img src="{{ asset('/') }}/front-end/images/b3.jpg" class="img-responsive" alt="">
+                            <img src="{{ asset($sliderImage->third_image) }}" class="img-responsive" alt="">
                         </div>
                         <div class="core-slider_item">
-                            <img src="{{ asset('/') }}/front-end/images/b4.jpg" class="img-responsive" alt="">
+                            <img src="{{ asset($sliderImage->fourth_image) }}" class="img-responsive" alt="">
                         </div>
+                        @endforeach
                     </div>
                 </div>
                 <div class="core-slider_nav">
@@ -125,7 +127,7 @@
                                 <div class="women">
                                     <h6><a href="#">{{ $newProduct->product_name }}</a></h6>
                                     <p ><em class="item_price">{{ $newProduct->product_price }}</em> Tk.</p>
-                                    <a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
+                                    <a href="{{ route('ad-to-cart',['id'=>$newProduct->id]) }}" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
                                 </div>
                             </div>
                         </div>

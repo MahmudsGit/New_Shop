@@ -24,6 +24,7 @@
                                 </div>
                             </div>
                             <div class="single-right simpleCart_shelfItem">
+                                {{ Form::open(['method'=>'POST','route'=>'ad-to-cart']) }}
                                 <h4>{{ $productDetail->product_name }}</h4>
                                 <div class="block">
                                     <div class="starbox small ghosting"> </div>
@@ -35,30 +36,15 @@
                                 <div class="color-quality">
                                     <h6>Quantity :</h6>
                                     <div class="quantity">
-                                        <div class="quantity-select">
-                                            <div class="entry value-minus1">&nbsp;</div>
-                                            <div class="entry value1"><span>1</span></div>
-                                            <div class="entry value-plus1 active">&nbsp;</div>
-                                        </div>
+                                        <input type="number" name="qty" value="1">
+                                        <input type="hidden" name="id" value="{{ $productDetail->id }}">
                                     </div>
-                                    <!--quantity-->
-                                    <script>
-                                        $('.value-plus1').on('click', function(){
-                                            var divUpd = $(this).parent().find('.value1'), newVal = parseInt(divUpd.text(), 10)+1;
-                                            divUpd.text(newVal);
-                                        });
-
-                                        $('.value-minus1').on('click', function(){
-                                            var divUpd = $(this).parent().find('.value1'), newVal = parseInt(divUpd.text(), 10)-1;
-                                            if(newVal>=1) divUpd.text(newVal);
-                                        });
-                                    </script>
-                                    <!--quantity-->
                                 </div>
                                 <div class="women">
                                     <span class="size">XL / XXL / S </span>
-                                    <a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
+                                    <input type="submit" value="Add To Cart"  class="my-cart-b item_add">
                                 </div>
+                                {{ Form::close() }}
                                 <div class="social-icon">
                                     <a href="#"><i class="icon"></i></a>
                                     <a href="#"><i class="icon1"></i></a>

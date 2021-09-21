@@ -6,6 +6,7 @@ use App\ad;
 use App\brand;
 use App\category;
 use App\product;
+use App\slider;
 use Illuminate\Http\Request;
 
 class NewShopController extends Controller
@@ -18,10 +19,12 @@ class NewShopController extends Controller
             ->get();
 
         $ads = ad::all();
+        $sliderImages = slider::all();
 
         return view('front-end.home.index',[
             'newProducts'=> $newProducts,
-            'ads'=> $ads
+            'ads'=> $ads,
+            'sliderImages'=> $sliderImages
         ]);
     }
     public function category($id){

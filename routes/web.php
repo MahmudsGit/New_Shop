@@ -20,6 +20,41 @@ Route::get('/mail-us',[
    'uses'   =>  'NewShopController@mail',
    'as'     =>  '/mail'
 ]);
+Route::post('/cart/add',[
+   'uses'   =>  'CartController@adToCart',
+   'as'     =>  'ad-to-cart'
+]);
+Route::get('/cart/add/{id}',[
+   'uses'   =>  'CartController@adToCartHome',
+   'as'     =>  'ad-to-cart'
+]);
+Route::get('/cart/view',[
+   'uses'   =>  'CartController@viewCart',
+   'as'     =>  'view-cart'
+]);
+Route::get('/cart/delete/{rowId}',[
+   'uses'   =>  'CartController@deleteCart',
+   'as'     =>  'delete-cart'
+]);
+Route::get('/cart/empty',[
+   'uses'   =>  'CartController@emptyCart',
+   'as'     =>  'empty-cart'
+]);
+Route::get('/cheakout',[
+   'uses'   =>  'CheakOutController@index',
+   'as'     =>  'cheak-out'
+]);
+
+Route::post('/update/quantity',[
+   'uses'   =>  'CartController@updateQuantityCart',
+   'as'     =>  'update-quantity'
+]);
+
+
+
+
+
+
 
 
 
@@ -130,7 +165,15 @@ Route::get('/image/ad',[
     'uses'   =>  'AdController@AdImage',
     'as'     =>  'ad-image'
 ]);
-Route::post('/image/save',[
+Route::post('/ad/save',[
     'uses'   =>  'AdController@SaveAdImage',
     'as'     =>  'save-ad-image'
+]);
+Route::get('/image/slider',[
+    'uses'   =>  'SliderController@SliderImage',
+    'as'     =>  'slider-image'
+]);
+Route::post('/slider/save',[
+    'uses'   =>  'SliderController@SaveSliderImage',
+    'as'     =>  'save-slider-image'
 ]);
