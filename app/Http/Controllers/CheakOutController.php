@@ -159,10 +159,9 @@ class CheakOutController extends Controller
                 $orderDetail->priduct_price  = $cartProduct->price;
                 $orderDetail->priduct_qty  = $cartProduct->qty;
                 $orderDetail->save();
-
-                Cart::destroy();
-                return redirect('/order/complete');
             }
+            Cart::destroy();
+            return redirect('/order/complete');
         }elseif ($paymentType == 'paypal'){
             return redirect('/payment')->with('messege','Something Wrong ! Please Try Using Cash On Delivery !');
         }elseif ($paymentType == 'rocket'){

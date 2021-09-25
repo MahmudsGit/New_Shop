@@ -111,7 +111,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li><a href="{{ route('login-customer') }}">Login</a></li>
                         <li><a href="{{ route('customer-registration') }}">SignUp</a></li>
                     @endif
-                    <li><a href="{{ route('login') }}"><span class="fa fa-lg fa-dashboard"></span></a></li>
+                    <li><a href="{{ route('login') }}" target=”_blank”><span class="fa fa-lg fa-dashboard"></span></a></li>
                 </ul>
             </div>
             <div class="clearfix"></div>
