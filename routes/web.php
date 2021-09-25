@@ -26,7 +26,7 @@ Route::post('/cart/add',[
 ]);
 Route::get('/cart/add/{id}',[
    'uses'   =>  'CartController@adToCartHome',
-   'as'     =>  'ad-to-cart'
+   'as'     =>  'ad-to-cart-home'
 ]);
 Route::get('/cart/view',[
    'uses'   =>  'CartController@viewCart',
@@ -40,16 +40,63 @@ Route::get('/cart/empty',[
    'uses'   =>  'CartController@emptyCart',
    'as'     =>  'empty-cart'
 ]);
-Route::get('/cheakout',[
-   'uses'   =>  'CheakOutController@index',
-   'as'     =>  'cheak-out'
-]);
-
 Route::post('/update/quantity',[
    'uses'   =>  'CartController@updateQuantityCart',
    'as'     =>  'update-quantity'
 ]);
+Route::get('/cheakout',[
+    'uses'   =>  'CheakOutController@index',
+    'as'     =>  'cheak-out'
+]);
+Route::post('/customer/register',[
+    'uses'   =>  'CheakOutController@CustomerRegister',
+    'as'     =>  'customer-register'
+]);
+Route::get('/cart/shipping',[
+    'uses'   =>  'CheakOutController@ShippingCart',
+    'as'     =>  'shipping-cart'
+]);
+Route::post('/shipping/save',[
+    'uses'   =>  'CheakOutController@saveShipping',
+    'as'     =>  'save-shipping'
+]);
+Route::get('/payment',[
+    'uses'   =>  'CheakOutController@paymentDetail',
+    'as'     =>  'payment-checkout'
+]);
+Route::post('/Order/new',[
+    'uses'   =>  'CheakOutController@newOrder',
+    'as'     =>  'new-order'
+]);
+Route::get('/order/complete',[
+    'uses'   =>  'CheakOutController@orderComplete',
+    'as'     =>  'complete-order'
+]);
+Route::post('/customer/login',[
+    'uses'   =>  'CheakOutController@CustomerLogin',
+    'as'     =>  'customer-login'
+]);
+Route::post('/login/home',[
+    'uses'   =>  'CheakOutController@CustomerLoginSave',
+    'as'     =>  'customer-login-home'
+]);
 
+Route::get('/login/customer',[
+    'uses'   =>  'CheakOutController@CustomerLoginHome',
+    'as'     =>  'login-customer'
+]);
+Route::get('/customer/logout',[
+    'uses'   =>  'CheakOutController@CustomerLogOut',
+    'as'     =>  'log-out'
+]);
+Route::get('/customer/registration',[
+    'uses'   =>  'CheakOutController@CustomerRegisterIndex',
+    'as'     =>  'customer-registration'
+]);
+Route::post('/registration/save',[
+    'uses'   =>  'CheakOutController@CustomerRegisterHome',
+    'as'     =>  'registration-save'
+]);
 
 
 
@@ -161,6 +208,16 @@ Route::get('/product/delete/{id}',[
     'uses'   =>  'ProductController@DeleteProduct',
     'as'     =>  'delete-product'
 ]);
+Route::get('/manage/order',[
+    'uses'   =>  'OrderController@orderIndex',
+    'as'     =>  'manage-order'
+]);
+Route::get('/order/view/{id}',[
+    'uses'   =>  'OrderController@orderView',
+    'as'     =>  'order-view'
+]);
+
+
 Route::get('/image/ad',[
     'uses'   =>  'AdController@AdImage',
     'as'     =>  'ad-image'

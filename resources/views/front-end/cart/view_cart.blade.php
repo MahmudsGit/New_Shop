@@ -5,6 +5,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1">
+                        <h5 class="text-center font-weight-bold text-danger" >{{ Session::get('messege') }}</h5>
                         <h2>My Shopping Bag ({{ Cart::count() }})</h2>
                         <script>$(document).ready(function(c) {
                                 $('.close1').on('click', function(c){
@@ -14,6 +15,7 @@
                                 });
                             });
                         </script>
+                        @php($sum = 0)
                         @foreach($cartItems as $cartItem)
                             <div class="cart-header ">
                                 <a href="{{ route('delete-cart',['rowId'=>$cartItem->rowId]) }}" class="close1"> </a>
@@ -41,7 +43,6 @@
                                             </ul>
                                         </div>
                                         <div class="delivery col-md-4">
-
                                             <span>Delivered in Next 72 hours</span>
                                             <div class="clearfix"></div>
                                         </div>
@@ -70,13 +71,27 @@
                             </div>
                             <div class="col-md-6">
                                 <h4 class="text-info">Not Log In Yet !</h4><br>
-                                <a class="btn btn-lg btn-info">LOG IN NOW</a>
+                                @if( Session::get('customerId') )
+                                    <a href="{{ route('shipping-cart') }}" class="btn btn-lg btn-info">LOG IN NOW</a>
+                                @else
+                                    <a href="{{ route('login-customer') }}" class="btn btn-lg btn-info">LOG IN NOW</a>
+                                @endif
                             </div>
                         </div>
                     </div>
                     <div class="col-md-10 col-md-offset-1">
-                        <a href="{{ route('cheak-out') }}" class="btn btn-lg btn-primary pull-right">Cheak Out</a>
-                        <a href="#" class="btn btn-lg btn-success">Continue Shopping !</a>
+                        @if( Session::get('customerId') && Session::get('shippingId') )
+                            <a href="{{ route('payment-checkout') }}" class="btn btn-lg btn-primary pull-right">Cheak Out</a>
+                        @elseif( Session::get('customerId') )
+                            <a href="{{ route('shipping-cart') }}" class="btn btn-lg btn-primary pull-right">Cheak Out</a>
+                        @else
+                            <a href="{{ route('cheak-out') }}" class="btn btn-lg btn-primary pull-right">Cheak Out</a>
+                        @endif
+                        @if( Session::get('customerId') )
+                            <a href="{{ route('shipping-cart') }}" class="btn btn-lg btn-success">Continue Shopping <i class="fa fa-arrow-right"></i></a>
+                        @else
+                            <a href="{{ route('cheak-out') }}" class="btn btn-lg btn-success">Continue Shopping <i class="fa fa-arrow-right"></i></a>
+                        @endif
                     </div>
                 </div>
             </div>

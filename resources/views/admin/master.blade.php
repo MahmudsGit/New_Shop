@@ -111,6 +111,14 @@
         </li>
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
+            <a class="nav-link collapsed" href="{{ route('manage-order') }}"
+               aria-expanded="true" aria-controls="collapseFour">
+                <i class="fas fa-fw fa-cart-plus"></i>
+                <span>Manage Order</span>
+            </a>
+        </li>
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
             <a class="nav-link collapsed" href="{{ route('slider-image') }}"
                aria-expanded="true" aria-controls="collapseFour">
                 <i class="fas fa-fw fa-image"></i>

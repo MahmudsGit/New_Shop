@@ -2027,7 +2027,7 @@ p.quote {
     margin-top: 2em;
 }
 .main-agileits {
-    width: 30%;
+    width: 90%;
     margin: 0em auto ;
 	box-shadow: 0px 0px 15px 0px #D6D6D6;
 	-o-box-shadow: 0px 0px 15px 0px #D6D6D6;
@@ -2038,7 +2038,7 @@ p.quote {
 
 .key  input[type="text"] ,.key  input[type="password"]{
     width: 87%;
-    padding: 10px 10px;
+    padding: 5px 5px;
     font-size: 1em;
     border: none;
     border-bottom: none;
@@ -2051,7 +2051,7 @@ p.quote {
 	    float: left;
     color: #999;
     font-size: 1.1em;
-    padding: 13px;
+    padding: 5px;
 }
 .key {
     background: #fff;
@@ -2386,7 +2386,7 @@ li.bt-nn h6 {
     top: 12%;	
 }
 .main-agileits {
-    width: 31%;
+    width: 90%;
 }
 }
 @media(max-width:1280px){
@@ -2394,7 +2394,7 @@ li.bt-nn h6 {
     top: 15%;	
 }
 .main-agileits {
-    width: 33%;
+    width: 90%;
 }
 .cd-search {
     top: 17%;
@@ -2459,7 +2459,7 @@ li.bt-nn h6 {
     font-size: 2em;
 }
 .main-agileits {
-    width: 39%;
+    width: 90%;
 }
 .video iframe {
     height: 345px;
@@ -2482,7 +2482,7 @@ li.bt-nn h6 {
     top: 10%;
 }
 .main-agileits {
-    width: 41%;
+    width: 90%;
 }
 .cd-header-buttons {
     right: 20%;
@@ -2651,7 +2651,7 @@ h3.tittle1,h3.tittle {
     height: 300px;
 }
 .main-agileits {
-    width: 42%;
+    width: 90%;
 }
 .product-grid {
     float: left;
@@ -2716,7 +2716,7 @@ ul.multi-column-dropdown h6 {
     padding: 30px 30px;
 }
 .main-agileits {
-    width: 52%;
+    width: 90%;
 }	
 }
 @media(max-width:768px){
@@ -2724,7 +2724,7 @@ ul.multi-column-dropdown h6 {
     top: 22%;
 }
 .main-agileits {
-    width: 54%;
+    width: 90%;
 }	
 }
 @media(max-width:736px){
@@ -2809,7 +2809,7 @@ h3.tittle1, h3.tittle {
     left: -2%;
 }
 .main-agileits {
-    width: 57%;
+    width: 90%;
 }
 .login {
     padding: 4em 0;
@@ -2896,7 +2896,7 @@ a.button1 {
     top: 45%;
 }
 .main-agileits {
-    width: 63%;
+    width: 90%;
 }
 .modal-dialog {
     width: 625px;
@@ -2964,7 +2964,7 @@ a.button1 {
 	 text-align: center;
 }
 .main-agileits {
-    width: 70%;
+    width: 90%;
 }
 p.price {
     font-size: 1.5em;
@@ -3037,7 +3037,7 @@ p.quote {
     font-size: 2.5em;
 }
 .main-agileits {
-    width: 74%;
+    width: 90%;
 }
 .logo-nav-left h1 a {
     font-size: 1em;
@@ -3328,7 +3328,7 @@ h3.tittle1, h3.tittle {
 		font-size: 0.9em;
 	}
 	.key input[type="text"], .key input[type="password"] {
-		width: 84%;
+		width: 100%;
 	}
 	.left-tab > li > a {
 		font-size: 1em;

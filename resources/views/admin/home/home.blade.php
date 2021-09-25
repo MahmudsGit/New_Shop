@@ -85,6 +85,26 @@
             </div>
             <!-- Earnings (Monthly) Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-warning shadow h-100 py-3">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xl font-weight-bold text-warning text-uppercase mb-4">
+                                    Manage Order
+                                </div>
+                                <div class="text-xs mb-2 font-weight-bold text-gray-800">
+                                    <a href="{{ route('manage-order') }}">Manage</a>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-map-marked fa-2x text-gray-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
                 <div class="card border-left-danger shadow h-100 py-3">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">

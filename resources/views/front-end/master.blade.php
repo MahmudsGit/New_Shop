@@ -104,10 +104,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class="top-right">
                 <ul>
-                    <li><a href="#">Checkout</a></li>
-                    <li><a href="#">Login</a></li>
-                    <li><a href="#"> Create Account </a></li>
-                    <li><a href="{{ route('login') }}"><i class="fa fa-male"></i></a></li>
+                    @if( Session::get('customerId') )
+                        <li><a href="{{ route('log-out') }}">Logout</a></li>
+                    @else
+                        <li><a href="{{ route('cheak-out') }}">Checkout</a></li>
+                        <li><a href="{{ route('login-customer') }}">Login</a></li>
+                        <li><a href="{{ route('customer-registration') }}">SignUp</a></li>
+                    @endif
+                    <li><a href="{{ route('login') }}"><span class="fa fa-lg fa-dashboard"></span></a></li>
                 </ul>
             </div>
             <div class="clearfix"></div>

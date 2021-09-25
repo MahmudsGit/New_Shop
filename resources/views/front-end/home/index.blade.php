@@ -127,7 +127,7 @@
                                 <div class="women">
                                     <h6><a href="#">{{ $newProduct->product_name }}</a></h6>
                                     <p ><em class="item_price">{{ $newProduct->product_price }}</em> Tk.</p>
-                                    <a href="{{ route('ad-to-cart',['id'=>$newProduct->id]) }}" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
+                                    <a href="{{ route('ad-to-cart-home',['id'=>$newProduct->id]) }}" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
                                 </div>
                             </div>
                         </div>
