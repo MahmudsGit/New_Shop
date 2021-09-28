@@ -4,7 +4,7 @@
         <div class="cart-items">
             <div class="container">
                 <div class="col-md-6 col-md-offset-3 ">
-                    <h2 class="text-info">Mr. {{ Session::get('customerName') }} You have Successfully Complete New Order.</h2>
+                    <h2 class="text-info">Hello, {{ Session::get('customerName') }} You have Successfully Complete New Order.</h2>
                 </div><br>
                 <div class="row">
                     <div class="col-md-6 col-md-offset-3">

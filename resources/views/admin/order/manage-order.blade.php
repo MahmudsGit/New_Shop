@@ -51,9 +51,9 @@
                                 <td>{{ $order->payment_status }}</td>
 
                                 <td>
-                                    <a href="{{ route('order-view',['id' => $order->id]) }}" class="btn btn-outline-success btn-xs"><i class="fa fa-eye"></i></a>
-                                    <a href="" class="btn btn-outline-secondary btn-xs"><i class="fa fa-edit"></i></a>
-                                    <a href="" class="btn btn-outline-info btn-xs"><i class="fa fa-download"></i></a>
+                                    <a href="{{ route('order-view',['id' => $order->id]) }}" title="View Detail" class="btn btn-outline-success btn-xs"><i class="fa fa-eye"></i></a>
+                                    <a href="{{ route('order-invoice',['id' => $order->id]) }}" title="Invoice" class="btn btn-outline-secondary btn-xs"><i class="fa fa-info"></i></a>
+                                    <a href="{{ route('download-invoice',['id' => $order->id]) }}" class="btn btn-outline-info btn-xs"><i class="fa fa-download"></i></a>
                                     <a href="" class="btn btn-outline-danger btn-xs"><i class="fa fa-trash"></i></a>
                                 </td>
                             </tr>

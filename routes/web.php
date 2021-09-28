@@ -216,6 +216,14 @@ Route::get('/order/view/{id}',[
     'uses'   =>  'OrderController@orderView',
     'as'     =>  'order-view'
 ]);
+Route::get('/order/invoice/{id}',[
+    'uses'   =>  'OrderController@orderInvoice',
+    'as'     =>  'order-invoice'
+]);
+Route::get('/order/invoice/download/{id}',[
+    'uses'   =>  'OrderController@downloadOrderInvoice',
+    'as'     =>  'download-invoice'
+]);
 
 
 Route::get('/image/ad',[
