@@ -12,8 +12,13 @@
                             <div class="card-header bg-gradient-secondary">
                                 <h3 class="text-success">Order Complete</h3><br>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body" >
+                                <i class="fa fa-check text-center text-success size_3 fa-5x" ></i>
+                                <hr>
+                                <div class="">
 
+                                </div>
+                                <a href="https://mail.google.com" class="">We'll Sent You a Invoice to your Email.<i class="fa fa-download text-center text-success ">Download Invoice Now</i></a>
                             </div>
                         </div>
                     </div>

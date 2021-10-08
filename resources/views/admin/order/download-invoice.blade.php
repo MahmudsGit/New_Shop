@@ -95,8 +95,8 @@
                             </tr>
                             <tr>
                                 <td colspan="4"></td>
-                                <td colspan="3"><h4>GRAND TOTAL</h4></td>
-                                <td><h4>{{ $order->total_cart }} Tk.</h4></td>
+                                <td colspan="3"><h5>GRAND TOTAL</h5></td>
+                                <td><h5>{{ $order->total_cart }} Tk.</h5></td>
                             </tr>
                             </tbody>
                         </table>

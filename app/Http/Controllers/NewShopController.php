@@ -17,12 +17,28 @@ class NewShopController extends Controller
             ->skip(33)
             ->take(8)
             ->get();
+        $arrivalsProductsOne = product::where('product_status', 1)
+            ->orderBy('id', 'DESC')
+            ->take(4)
+            ->get();
+        $arrivalsProductsTwo = product::where('product_status', 1)
+            ->orderBy('id', 'DESC')
+            ->skip(4)
+            ->take(4)
+            ->get();
+        $bestSellers = product::where('product_status', 1)
+            ->orderBy('id', 'ASC')
+            ->take(4)
+            ->get();
 
         $ads = ad::all();
         $sliderImages = slider::all();
 
         return view('front-end.home.index',[
             'newProducts'=> $newProducts,
+            'arrivalsProductsOne'=> $arrivalsProductsOne,
+            'arrivalsProductsTwo'=> $arrivalsProductsTwo,
+            'bestSellers'=> $bestSellers,
             'ads'=> $ads,
             'sliderImages'=> $sliderImages
         ]);
@@ -52,9 +68,21 @@ class NewShopController extends Controller
         $productDetails = product::where('id', $id)
             ->where('product_status', 1)
             ->get();
+        $recentProducts = product::where('product_status', 1)
+            ->orderBy('id', 'DESC')
+            ->skip(4)
+            ->take(4)
+            ->get();
+        $bestSellers = product::where('product_status', 1)
+            ->orderBy('id', 'ASC')
+            ->take(4)
+            ->get();
+
 
         return view('front-end.product.product_details',[
-            'productDetails'=>$productDetails
+            'productDetails'=>$productDetails,
+            'recentProducts'=>$recentProducts,
+            'bestSellers'=>$bestSellers
         ]);
     }
 }

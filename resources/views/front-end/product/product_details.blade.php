@@ -29,7 +29,7 @@
                                 <div class="block">
                                     <div class="starbox small ghosting"> </div>
                                 </div>
-                                <p class="price item_price">$ {{ $productDetail->product_price }}</p>
+                                <p class="price item_price">Tk. {{ $productDetail->product_price }}</p>
                                 <div class="description">
                                     <p><span>Quick Overview : </span>{{ $productDetail->short_description }}</p>
                                 </div>
@@ -42,7 +42,7 @@
                                 </div>
                                 <div class="women">
                                     <span class="size">XL / XXL / S </span>
-                                    <input type="submit" value="Add To Cart"  class="my-cart-b item_add">
+                                    <input type="submit" value="Add To Cart" data-text="Add To Cart" class="my-cart-b item_add">
                                 </div>
                                 {{ Form::close() }}
                                 <div class="social-icon">
@@ -58,58 +58,23 @@
                     </div>
                     <div class="col-md-3 single-grid1">
                         <h3>Recent Products</h3>
+
+                        @foreach($recentProducts as $recentProduct)
                         <div class="recent-grids">
                             <div class="recent-left">
-                                <a href="single.html"><img class="img-responsive " src="{{ asset('/') }}/front-end/images/r.jpg" alt=""></a>
+                                <a href="{{ route('product-details', ['id' => $recentProduct->id]) }}"><img class="img-responsive " src="{{ asset($recentProduct->product_image) }}" alt=""></a>
                             </div>
                             <div class="recent-right">
-                                <h6 class="best2"><a href="single.html">Lorem ipsum dolor </a></h6>
+                                <h6 class="best2"><a href="{{ route('product-details', ['id' => $recentProduct->id]) }}">{{ $recentProduct->product_name }}</a></h6>
                                 <div class="block">
                                     <div class="starbox small ghosting"> </div>
                                 </div>
-                                <span class=" price-in1"> $ 29.00</span>
+                                <span class=" price-in1">Tk. {{ $recentProduct->product_price }}</span>
                             </div>
                             <div class="clearfix"> </div>
                         </div>
-                        <div class="recent-grids">
-                            <div class="recent-left">
-                                <a href="single.html"><img class="img-responsive " src="{{ asset('/') }}/front-end/images/r1.jpg" alt=""></a>
-                            </div>
-                            <div class="recent-right">
-                                <h6 class="best2"><a href="single.html">Duis aute irure </a></h6>
-                                <div class="block">
-                                    <div class="starbox small ghosting"> </div>
-                                </div>
-                                <span class=" price-in1"> $ 19.00</span>
-                            </div>
-                            <div class="clearfix"> </div>
-                        </div>
-                        <div class="recent-grids">
-                            <div class="recent-left">
-                                <a href="single.html"><img class="img-responsive " src="{{ asset('/') }}/front-end/images/r2.jpg" alt=""></a>
-                            </div>
-                            <div class="recent-right">
-                                <h6 class="best2"><a href="single.html">Lorem ipsum dolor </a></h6>
-                                <div class="block">
-                                    <div class="starbox small ghosting"> </div>
-                                </div>
-                                <span class=" price-in1"> $ 19.00</span>
-                            </div>
-                            <div class="clearfix"> </div>
-                        </div>
-                        <div class="recent-grids">
-                            <div class="recent-left">
-                                <a href="single.html"><img class="img-responsive " src="{{ asset('/') }}/front-end/images/r3.jpg" alt=""></a>
-                            </div>
-                            <div class="recent-right">
-                                <h6 class="best2"><a href="single.html">Ut enim ad minim </a></h6>
-                                <div class="block">
-                                    <div class="starbox small ghosting"> </div>
-                                </div>
-                                <span class=" price-in1">$ 45.00</span>
-                            </div>
-                            <div class="clearfix"> </div>
-                        </div>
+                        @endforeach
+
                     </div>
                     <div class="clearfix"> </div>
                 </div>
@@ -120,115 +85,40 @@
                         <div class="col-md-4 product-grid">
                             <div id="owl-demo" class="owl-carousel">
                                 <div class="item">
-                                    <div class="recent-grids">
-                                        <div class="recent-left">
-                                            <a href="single.html"><img class="img-responsive " src="{{ asset('/') }}/front-end/images/r.jpg" alt=""></a>
-                                        </div>
-                                        <div class="recent-right">
-                                            <h6 class="best2"><a href="single.html">Lorem ipsum dolor </a></h6>
-                                            <div class="block">
-                                                <div class="starbox small ghosting"> </div>
+                                    @foreach($recentProducts as $recentProduct)
+                                        <div class="recent-grids">
+                                            <div class="recent-left">
+                                                <a href="{{ route('product-details', ['id' => $recentProduct->id]) }}"><img class="img-responsive " src="{{ asset($recentProduct->product_image) }}" alt=""></a>
                                             </div>
-                                            <span class=" price-in1"> $ 29.00</span>
-                                        </div>
-                                        <div class="clearfix"> </div>
-                                    </div>
-                                    <div class="recent-grids">
-                                        <div class="recent-left">
-                                            <a href="single.html"><img class="img-responsive " src="{{ asset('/') }}/front-end/images/r1.jpg" alt=""></a>
-                                        </div>
-                                        <div class="recent-right">
-                                            <h6 class="best2"><a href="single.html">Duis aute irure </a></h6>
-                                            <div class="block">
-                                                <div class="starbox small ghosting"> </div>
+                                            <div class="recent-right">
+                                                <h6 class="best2"><a href="{{ route('product-details', ['id' => $recentProduct->id]) }}">{{ $recentProduct->product_name }}</a></h6>
+                                                <div class="block">
+                                                    <div class="starbox small ghosting"> </div>
+                                                </div>
+                                                <span class=" price-in1">Tk. {{ $recentProduct->product_price }}</span>
                                             </div>
-                                            <span class=" price-in1"> $ 19.00</span>
+                                            <div class="clearfix"> </div>
                                         </div>
-                                        <div class="clearfix"> </div>
-                                    </div>
-                                    <div class="recent-grids">
-                                        <div class="recent-left">
-                                            <a href="single.html"><img class="img-responsive " src="{{ asset('/') }}/front-end/images/r2.jpg" alt=""></a>
-                                        </div>
-                                        <div class="recent-right">
-                                            <h6 class="best2"><a href="single.html">Lorem ipsum dolor </a></h6>
-                                            <div class="block">
-                                                <div class="starbox small ghosting"> </div>
-                                            </div>
-                                            <span class=" price-in1"> $ 19.00</span>
-                                        </div>
-                                        <div class="clearfix"> </div>
-                                    </div>
-                                    <div class="recent-grids">
-                                        <div class="recent-left">
-                                            <a href="single.html"><img class="img-responsive " src="{{ asset('/') }}/front-end/images/r3.jpg" alt=""></a>
-                                        </div>
-                                        <div class="recent-right">
-                                            <h6 class="best2"><a href="single.html">Ut enim ad minim </a></h6>
-                                            <div class="block">
-                                                <div class="starbox small ghosting"> </div>
-                                            </div>
-                                            <span class=" price-in1">$ 45.00</span>
-                                        </div>
-                                        <div class="clearfix"> </div>
-                                    </div>
+                                    @endforeach
                                 </div>
                                 <div class="item">
-                                    <div class="recent-grids">
-                                        <div class="recent-left">
-                                            <a href="single.html"><img class="img-responsive " src="{{ asset('/') }}/front-end/images/r4.jpg" alt=""></a>
-                                        </div>
-                                        <div class="recent-right">
-                                            <h6 class="best2"><a href="single.html">Lorem ipsum dolor </a></h6>
-                                            <div class="block">
-                                                <div class="starbox small ghosting"> </div>
+                                    @foreach($recentProducts as $recentProduct)
+                                        <div class="recent-grids">
+                                            <div class="recent-left">
+                                                <a href="{{ route('product-details', ['id' => $recentProduct->id]) }}"><img class="img-responsive " src="{{ asset($recentProduct->product_image) }}" alt=""></a>
                                             </div>
-                                            <span class=" price-in1"> $ 29.00</span>
-                                        </div>
-                                        <div class="clearfix"> </div>
-                                    </div>
-                                    <div class="recent-grids">
-                                        <div class="recent-left">
-                                            <a href="single.html"><img class="img-responsive " src="{{ asset('/') }}/front-end/images/r5.jpg" alt=""></a>
-                                        </div>
-                                        <div class="recent-right">
-                                            <h6 class="best2"><a href="single.html">Duis aute irure </a></h6>
-                                            <div class="block">
-                                                <div class="starbox small ghosting"> </div>
+                                            <div class="recent-right">
+                                                <h6 class="best2"><a href="{{ route('product-details', ['id' => $recentProduct->id]) }}">{{ $recentProduct->product_name }}</a></h6>
+                                                <div class="block">
+                                                    <div class="starbox small ghosting"> </div>
+                                                </div>
+                                                <span class=" price-in1">Tk. {{ $recentProduct->product_price }}</span>
                                             </div>
-                                            <span class=" price-in1"> $ 19.00</span>
+                                            <div class="clearfix"> </div>
                                         </div>
-                                        <div class="clearfix"> </div>
-                                    </div>
-                                    <div class="recent-grids">
-                                        <div class="recent-left">
-                                            <a href="single.html"><img class="img-responsive " src="{{ asset('/') }}/front-end/images/r2.jpg" alt=""></a>
-                                        </div>
-                                        <div class="recent-right">
-                                            <h6 class="best2"><a href="single.html">Lorem ipsum dolor </a></h6>
-                                            <div class="block">
-                                                <div class="starbox small ghosting"> </div>
-                                            </div>
-                                            <span class=" price-in1"> $ 19.00</span>
-                                        </div>
-                                        <div class="clearfix"> </div>
-                                    </div>
-                                    <div class="recent-grids">
-                                        <div class="recent-left">
-                                            <a href="single.html"><img class="img-responsive " src="{{ asset('/') }}/front-end/images/r3.jpg" alt=""></a>
-                                        </div>
-                                        <div class="recent-right">
-                                            <h6 class="best2"><a href="single.html">Ut enim ad minim </a></h6>
-                                            <div class="block">
-                                                <div class="starbox small ghosting"> </div>
-                                            </div>
-                                            <span class=" price-in1">$ 45.00</span>
-                                        </div>
-                                        <div class="clearfix"> </div>
-                                    </div>
+                                    @endforeach
                                 </div>
                             </div>
-                            <img class="img-responsive " src="{{ asset('/') }}/front-end/images/woo2.jpg" alt="">
                         </div>
                         <div class="col-md-8 product-grid1">
                             <div class="tab-wl3">
@@ -305,121 +195,41 @@
             <div class="container">
                 <h3 class="tittle1">Best Sellers</h3>
                 <div class="arrivals-grids">
-                    <div class="col-md-3 arrival-grid simpleCart_shelfItem">
-                        <div class="grid-arr">
-                            <div  class="grid-arrival">
-                                <figure>
-                                    <a href="single.html">
-                                        <div class="grid-img">
-                                            <img  src="{{ asset('/') }}/front-end/images/p28.jpg" class="img-responsive" alt="">
-                                        </div>
-                                        <div class="grid-img">
-                                            <img  src="{{ asset('/') }}/front-end/images/p27.jpg" class="img-responsive"  alt="">
-                                        </div>
-                                    </a>
-                                </figure>
-                            </div>
-                            <div class="ribben">
-                                <p>NEW</p>
-                            </div>
-                            <div class="ribben1">
-                                <p>SALE</p>
-                            </div>
-                            <div class="block">
-                                <div class="starbox small ghosting"> </div>
-                            </div>
-                            <div class="women">
-                                <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-                                <span class="size">XL / XXL / S </span>
-                                <p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-                                <a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 arrival-grid simpleCart_shelfItem">
-                        <div class="grid-arr">
-                            <div  class="grid-arrival">
-                                <figure>
-                                    <a href="single.html">
-                                        <div class="grid-img">
-                                            <img  src="{{ asset('/') }}/front-end/images/p30.jpg" class="img-responsive" alt="">
-                                        </div>
-                                        <div class="grid-img">
-                                            <img  src="{{ asset('/') }}/front-end/images/p29.jpg" class="img-responsive"  alt="">
-                                        </div>
-                                    </a>
-                                </figure>
-                            </div>
-                            <div class="ribben2">
-                                <p>OUT OF STOCK</p>
-                            </div>
-                            <div class="block">
-                                <div class="starbox small ghosting"> </div>
-                            </div>
-                            <div class="women">
-                                <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-                                <span class="size">XL / XXL / S </span>
-                                <p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-                                <a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
+
+                    @foreach($bestSellers as $bestSeller)
+                        <div class="col-md-3 arrival-grid simpleCart_shelfItem">
+                            <div class="grid-arr">
+                                <div  class="grid-arrival">
+                                    <figure>
+                                        <a href="{{ route('product-details', ['id' => $bestSeller->id]) }}">
+                                            <div class="grid-img">
+                                                <img  src="{{ asset($bestSeller->product_image) }}" class="img-responsive" alt="">
+                                            </div>
+                                            <div class="grid-img">
+                                                <img  src="{{ asset($bestSeller->product_image) }}" class="img-responsive"  alt="">
+                                            </div>
+                                        </a>
+                                    </figure>
+                                </div>
+                                <div class="ribben">
+                                    <p>NEW</p>
+                                </div>
+                                <div class="ribben1">
+                                    <p>SALE</p>
+                                </div>
+                                <div class="block">
+                                    <div class="starbox small ghosting"> </div>
+                                </div>
+                                <div class="women">
+                                    <h6><a href="{{ route('product-details', ['id' => $bestSeller->id]) }}">{{ $bestSeller->product_name }}</a></h6>
+                                    <span class="size">XL / XXL / S </span>
+                                    <p ><em class="item_price">Tk. {{ $bestSeller->product_price }}</em></p>
+                                    <a href="{{ route('ad-to-cart-home',['id'=>$bestSeller->id]) }}" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-3 arrival-grid simpleCart_shelfItem">
-                        <div class="grid-arr">
-                            <div  class="grid-arrival">
-                                <figure>
-                                    <a href="single.html">
-                                        <div class="grid-img">
-                                            <img  src="{{ asset('/') }}/front-end/images/s2.jpg" class="img-responsive" alt="">
-                                        </div>
-                                        <div class="grid-img">
-                                            <img  src="{{ asset('/') }}/front-end/images/s1.jpg" class="img-responsive"  alt="">
-                                        </div>
-                                    </a>
-                                </figure>
-                            </div>
-                            <div class="ribben1">
-                                <p>SALE</p>
-                            </div>
-                            <div class="block">
-                                <div class="starbox small ghosting"> </div>
-                            </div>
-                            <div class="women">
-                                <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-                                <span class="size">XL / XXL / S </span>
-                                <p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-                                <a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 arrival-grid simpleCart_shelfItem">
-                        <div class="grid-arr">
-                            <div  class="grid-arrival">
-                                <figure>
-                                    <a href="single.html">
-                                        <div class="grid-img">
-                                            <img  src="{{ asset('/') }}/front-end/images/s4.jpg" class="img-responsive" alt="">
-                                        </div>
-                                        <div class="grid-img">
-                                            <img  src="{{ asset('/') }}/front-end/images/s3.jpg" class="img-responsive"  alt="">
-                                        </div>
-                                    </a>
-                                </figure>
-                            </div>
-                            <div class="ribben">
-                                <p>NEW</p>
-                            </div>
-                            <div class="block">
-                                <div class="starbox small ghosting"> </div>
-                            </div>
-                            <div class="women">
-                                <h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-                                <span class="size">XL / XXL / S </span>
-                                <p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-                                <a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
+
                     <div class="clearfix"></div>
                 </div>
             </div>

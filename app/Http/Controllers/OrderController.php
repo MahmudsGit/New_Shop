@@ -70,7 +70,11 @@ class OrderController extends Controller
             'payment'=>$payment,
             'orderDetails'=>$orderDetails
         ]);
-        return $pdf->stream('0011$orderDetails->id.invoice.pdf');
+        foreach ($orderDetails as $orderDetail){
+            $orderId = $orderDetail->order_id;
+        }
+        return $pdf->stream('#0011'.$orderId.'_NewShhopInvoice.pdf');
+
 
 //        return $pdf->download('invoice.pdf');
 

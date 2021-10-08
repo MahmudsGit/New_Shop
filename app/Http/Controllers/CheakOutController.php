@@ -89,6 +89,9 @@ class CheakOutController extends Controller
         $this->loginValidation($request);
 
         $customer = customer::where('email',$request->login_email)->first();
+        if (!$customer){
+            return redirect('/cheakout')->with('messege', 'Please Fill Up a Valid Email !');
+        }
         if (password_verify( $request->login_password, $customer->password)) {
             Session::put('customerId',$customer->id);
             Session::put('customerName',$customer->first_name.' '.$customer->last_name);
@@ -101,6 +104,9 @@ class CheakOutController extends Controller
         $this->loginValidation($request);
 
         $customer = customer::where('email',$request->login_email)->first();
+        if (!$customer){
+            return redirect('/login/customer')->with('messege', 'Please Fill Up a Valid Email !');
+        }
         if (password_verify( $request->login_password, $customer->password)) {
             Session::put('customerId',$customer->id);
             Session::put('customerName',$customer->first_name.' '.$customer->last_name);

@@ -105,6 +105,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="top-right">
                 <ul>
                     @if( Session::get('customerId') )
+                        <li><a href="#">Settings</a></li>
                         <li><a href="{{ route('log-out') }}">Logout</a></li>
                     @else
                         <li><a href="{{ route('cheak-out') }}">Checkout</a></li>
@@ -222,9 +223,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="col-md-3 footer-grid">
                 <h4>My Account</h4>
                 <ul>
-                    <li><a href="checkout.html">Checkout</a></li>
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="registered.html"> Create Account </a></li>
+                    @if( Session::get('customerId') )
+                        <li><a href="#">Settings</a></li>
+                        <li><a href="{{ route('log-out') }}">Logout</a></li>
+                    @else
+                        <li><a href="{{ route('cheak-out') }}">Checkout</a></li>
+                        <li><a href="{{ route('login-customer') }}">Login</a></li>
+                        <li><a href="{{ route('customer-registration') }}">Create Account</a></li>
+                    @endif
                 </ul>
             </div>
             <div class="col-md-3 footer-grid">
@@ -238,9 +244,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="col-md-3 footer-grid foot">
                 <h4>Contacts</h4>
                 <ul>
-                    <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i><a href="#">E Comertown Rd, Westby, USA</a></li>
-                    <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i><a href="#">1 599-033-5036</a></li>
-                    <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:example@mail.com"> example@mail.com</a></li>
+                    <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i><a href="#">E Silvertown Rd, Westpis, Mars</a></li>
+                    <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i><a href="#">0 00-000-0000</a></li>
+                    <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:example@mail.com"> newshop@mail.com</a></li>
 
                 </ul>
             </div>
