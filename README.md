@@ -1,3 +1,9 @@
+
+## About New Shop
+To access Admin / Backend Section use this-
+email: admin@gmail.com
+password: 123456
+
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
